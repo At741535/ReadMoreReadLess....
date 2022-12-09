@@ -4,17 +4,17 @@ import "../App.css";
 const ReadMore = ({ children }) => {
   const text = children;
   const [isReadMore, setIsReadMore] = useState(true);
-  const [showDot, setShowDot] = useState(true);
+//   const [showDot, setShowDot] = useState(true);
   const toggleReadMore = () => {
     setIsReadMore(!isReadMore);
-    setShowDot(!showDot);
+//     setShowDot(!showDot);
   };
   return (
     <p className="text">
       {isReadMore ? text.slice(0, 150) : text}
       {text.length > 150 && (
         <>
-          {showDot && "..."}
+          {isReadMore && "..."}
 
           <span style={{ marginTop: "30px" }} onClick={toggleReadMore}>
             {isReadMore ? "read more" : "read less"}
